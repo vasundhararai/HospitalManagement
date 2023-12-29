@@ -1,0 +1,110 @@
+﻿@model IEnumerable<HospitalManagement.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecializedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorCertificate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewVideo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecializedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zipcode)
+            </td>
+            <td>
+                    <img src="https://hospitalstorage1.blob.core.windows.net/doctorimages/@item.DoctorPhoto" class="imagesize" />
+                @*@Html.DisplayFor(modelItem => item.DoctorPhoto)*@
+            </td>
+            <td>
+                    <img src="https://hospitalstorage1.blob.core.windows.net/doccertificate/@item.DoctorCertificate" class="imagesize"/>
+                @*@Html.DisplayFor(modelItem => item.DoctorCertificate)*@
+            </td>
+            <td>
+                    <img src="https://hospitalstorage1.blob.core.windows.net/docreviewvideo/@item.ReviewVideo" class="imagesize"/>
+                @*@Html.DisplayFor(modelItem => item.ReviewVideo)*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

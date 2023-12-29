@@ -1,0 +1,110 @@
+﻿@model HospitalManagement.Models.SignUpDoctor
+
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<h1>Sign Up</h1>
+
+<h4>Doctor Registration Form</h4>
+<hr />
+<div class="container">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Signup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control" asp-items="Model.Genderlist"></select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNumber" class="control-label"></label>
+                <input asp-for="MobileNumber" class="form-control" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisteredId" class="control-label"></label>
+                <input asp-for="RegisteredId" class="form-control" />
+                <span asp-validation-for="RegisteredId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialistIn" class="control-label"></label>
+                    <select asp-for="SpecialistIn" class="form-control" asp-items="Model.Specializationlist"></select>
+                <span asp-validation-for="SpecialistIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zipcode" class="control-label"></label>
+                <input asp-for="Zipcode" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UploadPhoto" class="control-label"></label>
+                <input type="file" asp-for="UploadPhoto" class="form-control" />
+                <span asp-validation-for="UploadPhoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UploadCertificate" class="control-label"></label>
+                <input type="file" asp-for="UploadCertificate" class="form-control" />
+                <span asp-validation-for="UploadCertificate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientReviewVideo" class="control-label"></label>
+                <input type="file" asp-for="PatientReviewVideo" class="form-control" />
+                <span asp-validation-for="PatientReviewVideo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
